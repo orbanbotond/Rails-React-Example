@@ -55,7 +55,7 @@ var CommentBox = React.createClass({
         url: this.props.url,
         dataType: 'json',
         type: 'POST',
-        data: comment,
+        data: {comment: comment},
         success: function(data) {
           this.setState({data: data});
         }.bind(this),
@@ -85,6 +85,7 @@ var CommentBox = React.createClass({
 
 var CommentList = React.createClass({
   render: function() {
+    debugger
     var commentNodes = this.props.data.map(function(comment, index) {
       return (
         // `key` is a React-specific concept and is not mandatory for the
@@ -137,10 +138,12 @@ var CommentForm = React.createClass({
   }
 });
 
-$(function() {
-  // React.renderComponent(
-  React.render(
-    <CommentBox url="comments.json" pollInterval={2000} />,
-    document.getElementById('content')
-  );
+$(document).on("page:change", function() {
+  var $content = $("#content");
+  if ($content.length > 0) {
+    React.render(
+      <CommentBox url="comments.json" pollInterval={2000} />,
+      document.getElementById('content')
+    );
+  }
 })
