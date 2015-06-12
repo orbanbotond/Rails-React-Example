@@ -1,4 +1,6 @@
-<%= react_component('CommentList', {data: @comments.as_json}, {prerender: true}) %>
+<div class="container">
+  <%= react_component('CommentList', {data: @comments.as_json}, {prerender: true}) %>
+</div>
 
 <h1>Listing comments</h1>
 
