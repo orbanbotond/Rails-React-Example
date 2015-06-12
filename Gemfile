@@ -29,6 +29,9 @@ gem 'spring',        group: :development
 gem 'react-rails', '~> 1.0'
 gem 'showdown-rails'
 
+gem 'bootstrap-sass'
+gem 'autoprefixer-rails'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
