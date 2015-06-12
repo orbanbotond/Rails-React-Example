@@ -14,7 +14,6 @@ var Comment = React.createClass({
   render: function() {
     var converter = new Showdown.converter();
     var rawMarkup = converter.makeHtml(this.props.children.toString(), {sanitize: true});
-    // var rawMarkup = marked(this.props.children.toString(), {sanitize: true});
     return (
       <div className="comment panel panel-default">
         <div className="panel-heading">
@@ -47,6 +46,7 @@ var CommentBox = React.createClass({
   handleCommentSubmit: function(comment) {
     var comments = this.state.data;
     comments.push(comment);
+    
     this.setState({data: comments}, function() {
       // `setState` accepts a callback. To avoid (improbable) race condition,
       // `we'll send the ajax request right after we optimistically set the new
@@ -85,7 +85,6 @@ var CommentBox = React.createClass({
 
 var CommentList = React.createClass({
   render: function() {
-    debugger
     var commentNodes = this.props.data.map(function(comment, index) {
       return (
         // `key` is a React-specific concept and is not mandatory for the
