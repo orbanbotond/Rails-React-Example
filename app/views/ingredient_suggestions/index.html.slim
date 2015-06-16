@@ -1,0 +1,26 @@
+h1 Listing ingredient_suggestions
+
+table
+  thead
+    tr
+      th Item
+      th colspan="3" 
+  tbody
+    - @ingredient_suggestions.each do |ingredient_suggestion|
+      tr
+        td= ingredient_suggestion.item
+        td= link_to 'Show', ingredient_suggestion
+        td= link_to 'Edit', edit_ingredient_suggestion_path(ingredient_suggestion)
+        td= link_to 'Destroy', ingredient_suggestion, method: :delete, data: {confirm: 'Are you sure?'}
+
+br/
+
+= link_to 'New Ingredient suggestion', new_ingredient_suggestion_path
+
+javascript:
+  $(document).ready(function() {
+    window.loadIngredientSuggestionsEditor(#{raw @ingredients.to_json});
+  });
+
+h1 Edit ingredient suggestions
+#js-ingredient-suggestions-editor

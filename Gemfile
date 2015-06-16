@@ -31,6 +31,9 @@ gem 'showdown-rails'
 
 gem 'bootstrap-sass'
 gem 'autoprefixer-rails'
+gem 'slim'
+gem 'pry'
+gem 'pry-nav'
 
 group :development do
   gem 'quiet_assets'

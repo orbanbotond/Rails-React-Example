@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :ingredient_suggestions
+
   root 'pages#index'
 
   resources :comments

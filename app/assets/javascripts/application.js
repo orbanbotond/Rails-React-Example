@@ -15,7 +15,8 @@
 //= require turbolinks
 //= require showdown
 //= require react
-// = require react_ujs
+//= require react_ujs
+//= require fluxxor
 //= require components
 //= require bootstrap-sprockets
 //= require_tree .

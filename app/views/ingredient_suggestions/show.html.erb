@@ -1,0 +1,9 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Item:</strong>
+  <%= @ingredient_suggestion.item %>
+</p>
+
+<%= link_to 'Edit', edit_ingredient_suggestion_path(@ingredient_suggestion) %> |
+<%= link_to 'Back', ingredient_suggestions_path %>
